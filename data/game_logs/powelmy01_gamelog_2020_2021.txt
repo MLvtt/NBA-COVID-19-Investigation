@@ -1,0 +1,1 @@
+[{"Rk": 1, "G": "", "Date": "2021-04-24", "Age": "23-291", "Tm": "NYK", "Home/Away": "", "Opp": "TOR", "Result": "W (+17)", "GS": "Inactive", "MP": null, "FG": null, "FGA": null, "FG%": null, "FT": null, "FTA": null, "FT%": null, "TRB": null, "AST": null, "PF": null, "PTS": null, "+/-": null, "GmSc": null}]

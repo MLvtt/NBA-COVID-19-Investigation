@@ -17,6 +17,10 @@ def id_generator(player_name):
         return 'klebima01'
     elif player_split[1] == 'ntilikina':
         return 'ntilila01'
+    elif player_name == "Kenyon Martin Jr. / K.J. Martin":
+        return 'martike04'
+    elif player_name == "Kevin Porter Jr.":
+        return 'porteke02'
     else:
         bbref_id = player_split[1][:5] + player_split[0][:2] + '01'
         # print(player_name)
