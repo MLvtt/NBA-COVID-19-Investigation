@@ -16,7 +16,7 @@ class BBRefScraper:
     def game_log_scraper(self, year):
         url = f'https://www.basketball-reference.com/players/{self.id[0]}/{self.id}/gamelog/{year}'
         r = requests.get(url)
-        soup = BeautifulSoup(r.content, 'html')
+        soup = BeautifulSoup(r.content, 'html.parser')
         div = soup.find("div", {"class": "table_container"})
         table = div.find("table", {"class": "row_summable"})
         rows = table.find_all('tr')[1:]
@@ -45,6 +45,8 @@ class BBRefScraper:
                         new_row[col] = row[i_c-1]
             game_log.append(new_row)
         return game_log
+    def playoff_game_log_scraper(self, year):
+        pass
 
             
 
@@ -56,4 +58,5 @@ if __name__ == "__main__":
     import pandas as pd
     kd = BBRefScraper('diallha01')
     df = pd.DataFrame(kd.game_log_scraper(2021))
-    print(df[['Date','GmSc']])
+    print(df)
+    

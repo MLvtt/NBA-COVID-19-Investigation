@@ -26,7 +26,7 @@ def id_generator(player_name):
         # print(player_name)
         url = f'https://www.basketball-reference.com/players/{bbref_id[0]}/{bbref_id}.html'
         r = requests.get(url)
-        soup = BeautifulSoup(r.content, 'html')
+        soup = BeautifulSoup(r.content, 'html.parser')
         name_check = re.search(">(.+?)<", str(soup.find("h1",   {'itemprop':"name"}))).group(1)
         if unidecode(name_check.lower()) in unidecode(player_name.lower()):
             return bbref_id
@@ -41,7 +41,7 @@ def id_generator(player_name):
                 if r.status_code != 200:
                     return False, player
                 else:
-                    soup = BeautifulSoup(r.content, 'html')
+                    soup = BeautifulSoup(r.content, 'html.parser')
                     name_check = re.search(">(.+?)<", str(soup.find("h1",   {'itemprop':"name"}))).group(1)
                     if name_check.lower() in player_name.lower():
                         return bbref_id
